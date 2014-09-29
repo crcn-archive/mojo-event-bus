@@ -1,6 +1,6 @@
 {
   "name": "mojo-event-bus",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "mojo-event-bus ==============",
   "main": "./lib/index.js",
   "scripts": {
