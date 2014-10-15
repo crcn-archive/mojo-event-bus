@@ -1,6 +1,6 @@
 {
   "name": "mojo-event-bus",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "mojo-event-bus ==============",
   "main": "./lib/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "mojo-views": "^0.1.x"
   },
   "dependencies": {
-    "bindable": "0.5.x",
+    "bindable": "0.6.x",
     "protoclass": "0.0.x",
     "uuid": "^2.0.1"
   }
