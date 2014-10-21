@@ -48,7 +48,7 @@ describe(__filename + "#", function () {
     it("emits willUpdate immediately after the an item is inserted", function () {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/collection/willUpdate": {
+        "/collection/collection/willUpdate": {
           execute: function (data) {
             expect(data.insert[0].name).to.be("a");
             i++;
@@ -69,7 +69,7 @@ describe(__filename + "#", function () {
       testCollection.create({ name: "a" });
 
       var listener = eventBus.subscribe({
-        "/collection/willUpdate": {
+        "/collection/collection/willUpdate": {
           execute: function (data) {
             expect(data.remove[0].name).to.be("a");
             i++;
@@ -88,7 +88,7 @@ describe(__filename + "#", function () {
 
 
       var listener = eventBus.subscribe({
-        "/collection/willInsert": {
+        "/collection/collection/willInsert": {
           execute: function (data) {
             expect(data.insert[0].name).to.be("a");
             i++;
@@ -110,7 +110,7 @@ describe(__filename + "#", function () {
       testCollection.create({ name: "a" });
 
       var listener = eventBus.subscribe({
-        "/collection/willRemove": {
+        "/collection/collection/willRemove": {
           execute: function (data) {
             expect(data.remove[0].name).to.be("a");
             i++;
@@ -127,7 +127,7 @@ describe(__filename + "#", function () {
     it("emits a didUpdate after successfuly saving", function (next) {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/collection/didUpdate": {
+        "/collection/collection/didUpdate": {
           execute: function (data) {
             expect(data.insert[0].name).to.be("a");
             i++;
@@ -146,7 +146,7 @@ describe(__filename + "#", function () {
     it("emits a didUpdate after successfuly removing", function (next) {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/collection/didUpdate": {
+        "/collection/collection/didUpdate": {
           execute: function (data) {
             if (data.remove) expect(data.remove[0].name).to.be("a");
             i++;
@@ -167,7 +167,7 @@ describe(__filename + "#", function () {
     it("emits a didInsert after successfuly inserting", function (next) {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/collection/didInsert": {
+        "/collection/collection/didInsert": {
           execute: function (data) {
             if (data.remove) expect(data.remove[0].name).to.be("a");
             i++;
@@ -187,7 +187,7 @@ describe(__filename + "#", function () {
     it("emits a didRemove after successfuly removing", function (next) {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/collection/didRemove": {
+        "/collection/collection/didRemove": {
           execute: function (data) {
             expect(data.remove[0].name).to.be("a");
             i++;
@@ -216,7 +216,7 @@ describe(__filename + "#", function () {
     it("successfuly emits change when the model changes", function () {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/model/change": {
+        "/model/model/change": {
           execute: function (data) {
             expect(data.key).to.be("name");
             expect(data.oldValue).to.be("a");
@@ -235,7 +235,7 @@ describe(__filename + "#", function () {
     it("successfuly emits dispose when the model changes", function () {
       var i = 0;
       var listener = eventBus.subscribe({
-        "/model/dispose": {
+        "/model/model/dispose": {
           execute: function (data) {
             i++;
           }
